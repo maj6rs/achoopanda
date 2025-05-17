@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$AHCHOO – Sneezing Baby Panda Coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #cdeac0;
+      --fg: #222;
+      --accent: #f2994a;
+      --highlight: #4a90e2;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+    }
+    /* Confetti Canvas */
+    #confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--highlight);
+      color: #fff;
+    }
+    .logo {
+      font-size: 2rem;
+      text-shadow: 2px 2px #000;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    nav a:hover {
+      transform: scale(1.2) rotate(-5deg);
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: url('https://source.unsplash.com/1600x900/?bamboo-grove') center/cover;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.7);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      display: inline-block;
+      animation: shake 0.5s infinite alternate;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    @keyframes shake {
+      from { transform: translateX(-10px); }
+      to { transform: translateX(10px); }
+    }
+    .hero img {
+      width: 200px;
+      border-radius: 50%;
+      border: 5px solid var(--accent);
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transform: skew(-10deg);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .buttons a:hover {
+      background: var(--highlight);
+      transform: skew(10deg) scale(1.1);
+    }
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--highlight);
+      text-shadow: 1px 1px #fff;
+    }
+    #gallery {
+      padding: 2rem 1rem;
+    }
+    #gallery .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    #gallery img {
+      width: 150px;
+      border: 3px dashed var(--accent);
+      border-radius: 10px;
+      animation: rotate 5s infinite linear;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    footer {
+      padding: 2rem 1rem;
+      background: var(--highlight);
+      color: #fff;
+      text-align: center;
+    }
+    footer em {
+      color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 0.5rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero img { width: 80%; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <header>
+    <div class="logo">🐼 $AHCHOO 🚀</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#buy">Buy</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#chart">Chart</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>TO THE MOON!</h1>
+      <p>One tiny panda sneeze and we’re blasting off!</p>
+      <img src="https://source.unsplash.com/300x300/?sneezing,panda" alt="Sneezing Baby Panda" />
+      <div class="buttons">
+        <a href="https://pump.fun">BUY NOW</a>
+        <a href="#chart">VIEW CHART</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery of Pandamonium</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/300x300/?panda,sunglasses" alt="Sunglasses Panda" />
+      <img src="https://source.unsplash.com/300x300/?panda,rocket" alt="Rocket Panda" />
+      <img src="https://source.unsplash.com/300x300/?panda,party" alt="Party Panda" />
+      <img src="https://source.unsplash.com/300x300/?panda,cute" alt="Cute Panda" />
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About $AHCHOO</h2>
+    <p>We took history's funniest panda sneeze and turned it into meme magic on-chain. No roadmaps, just chaos and confetti!</p>
+  </section>
+
+  <section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <p><strong>Ticker:</strong> $AHCHOO<br />
+       <strong>Chain:</strong> Solana<br />
+       <strong>Total Supply:</strong> 1,000,000,000<br />
+       <strong>Taxes:</strong> 0%<br />
+       <strong>LP Burned:</strong> ✅</p>
+  </section>
+
+  <section id="buy">
+    <h2>Buy $AHCHOO</h2>
+    <p>Ready for liftoff? Head to Pump.fun and get aboard the sneeze shuttle!</p>
+  </section>
+
+  <section id="chart">
+    <h2>Chart</h2>
+    <p><a href="https://dexscreener.com/solana/$AHCHOO" target="_blank">Track our wild ride on Dexscreener!</a></p>
+  </section>
+
+  <footer>
+    <p><em>Disclaimer:</em> This is pure meme entertainment, not financial advice. Sneezes may vary!</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const conf = confetti.create(document.getElementById('confetti'), { resize: true });
+    setInterval(() => conf({ particleCount: 30, spread: 100 }), 800);
+  </script>
+</body>
+</html>
